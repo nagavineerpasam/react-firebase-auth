@@ -25,7 +25,7 @@ export default function Login() {
   }
   return (
     <>
-      <Card>
+      <Card className="shadow p-3 mb-5 bg-white rounded">
         <Card.Body>
           <h2 className="text-center mb-4">Log In</h2>
 
@@ -39,13 +39,22 @@ export default function Login() {
               <Form.Label>Password</Form.Label>
               <Form.Control type="password" ref={passwordRef} required />
             </Form.Group>
-            <Button
-              disabled={loading}
-              className="w-100 text-center mt-2"
-              type="submit"
-            >
-              Log In
-            </Button>
+            {loading ? (
+              <div
+                class="spinner-border text-info justify-content-center"
+                role="status"
+              >
+                <span class="sr-only">Loading...</span>
+              </div>
+            ) : (
+              <Button
+                disabled={loading}
+                className="w-100 text-center mt-2"
+                type="submit"
+              >
+                Login
+              </Button>
+            )}
           </Form>
           <div className="w-100 text-center mt-3">
             <Link to="/forgotpassword">Forgot Password?</Link>

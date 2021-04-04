@@ -28,7 +28,7 @@ export default function Signup() {
   }
   return (
     <>
-      <Card>
+      <Card className="shadow p-3 mb-5 bg-white rounded">
         <Card.Body>
           <h2 className="text-center mb-4">Sign Up</h2>
 
@@ -46,13 +46,19 @@ export default function Signup() {
               <Form.Label>Confirm Password</Form.Label>
               <Form.Control type="password" ref={passwordConfirmRef} required />
             </Form.Group>
-            <Button
-              disabled={loading}
-              className="w-100 text-center mt-2"
-              type="submit"
-            >
-              Sign Up
-            </Button>
+            {loading ? (
+              <div class="spinner-border text-info text-center" role="status">
+                <span class="sr-only">Loading...</span>
+              </div>
+            ) : (
+              <Button
+                disabled={loading}
+                className="w-100 text-center mt-2"
+                type="submit"
+              >
+                Sign Up
+              </Button>
+            )}
           </Form>
         </Card.Body>
       </Card>

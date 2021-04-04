@@ -41,7 +41,7 @@ export default function UpdateProfile() {
   }
   return (
     <>
-      <Card>
+      <Card className="shadow p-3 mb-5 bg-white rounded">
         <Card.Body>
           <h2 className="text-center mb-4">Update Profile</h2>
 
